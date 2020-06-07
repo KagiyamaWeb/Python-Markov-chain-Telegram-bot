@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import random
 f = open("corpus.txt", "r")
 
@@ -32,7 +32,6 @@ class Dictogram(dict):
 
     def return_random_word(self):
         random_key = random.sample(self, 1)
-        # Другой способ:
         # random.choice(histogram.keys())
         return random_key[0]
 
@@ -64,8 +63,6 @@ class Dictogram(dict):
             self.update(iterable)
 
     def update(self, iterable):
-        # Обновляем распределение элементами из имеющегося
-        # итерируемого набора данных
         for item in iterable:
             if item in self:
                 self[item] += 1
@@ -76,28 +73,21 @@ class Dictogram(dict):
                 self.tokens += 1
 
     def count(self, item):
-        # Возвращаем значение счетчика элемента, или 0
         if item in self:
             return self[item]
         return 0
 
     def return_random_word(self):
         random_key = random.sample(self, 1)
-        # Другой способ:
         # random.choice(histogram.keys())
         return random_key[0]
 
     def return_weighted_random_word(self):
-        # Сгенерировать псевдослучайное число между 0 и (n-1),
-        # где n - общее число слов
         random_int = random.randint(0, self.tokens-1)
         index = 0
-        list_of_keys = list(self.keys()) #changed to a list here also
-        # вывести 'случайный индекс:', random_int
+        list_of_keys = list(self.keys())
         for i in range(0, self.types):
             index += self[list_of_keys[i]]
-            # вывести индекс
             if(index > random_int):
-                # вывести list_of_keys[i]
                 return list_of_keys[i]
->>>>>>> 73d120f1f825c24172a54d04b3170cd558ba7497
+
