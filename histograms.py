@@ -48,7 +48,6 @@ class Dictogram(dict):
             if(index > random_int):
                 # вывести list_of_keys[i]
                 return list_of_keys[i]
-=======
 import random
 f = open("corpus.txt", "r")
 
